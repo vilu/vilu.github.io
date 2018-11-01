@@ -1,0 +1,61 @@
+$light-shades: #f5f5f4;
+$light-accent: #d1a78d;
+$main-brand: #ec3f31;
+$link-color: $main-brand;
+$visited-link-color: darken($link-color, 10%);
+$dark-accent: #84939d;
+$dark-shades: #13303d;
+
+@mixin linkStyle($color, $accent) {
+    & {
+        color: $color;
+    }
+    &:visited, &:active, &:hover {
+        color: $accent;
+    }
+}
+
+body {
+    background: $light-shades;
+    text-color: $dark-shades;
+    h1 {
+        font-size: 1.2em;
+        color: $main-brand;
+        font-weight: 400;
+    }
+    h2 {
+        color: $main-brand;
+        font-size: 1.1em;
+        font-weight: 400;
+    }
+    h3 {
+        color: $main-brand;
+        font-size: 1em;
+        font-weight: 400;
+    }
+}
+
+a {
+    @include linkStyle($main-brand, darken($main-brand, 15%));
+}
+
+.navbar {
+    color: $dark-shades;
+    padding-bottom: 20px;
+}
+
+.btn {
+    color: $dark-shades;
+    font-size: 1.2em;
+    &.btn-link {
+        @include linkStyle($main-brand, $main-brand);
+    }
+}
+
+.no-left-pad {
+    padding-left: 0;
+}
+
+.no-right-pad {
+    padding-right: 0;
+}

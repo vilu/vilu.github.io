@@ -1,0 +1,20 @@
+<article>
+    <section class="header">
+        Posted on $date$
+        $if(author)$
+            by $author$
+        $endif$
+    </section>
+    <section>
+        $body$
+    </section>
+    <div id="share"/>
+    <script>
+     $$("#share").jsSocials({
+         showLabel: false,
+         showCoundt: false,
+         shares: ["email", "twitter", "linkedin"]
+     });
+    </script>
+</article>
+
